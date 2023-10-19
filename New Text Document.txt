@@ -1,0 +1,17 @@
+ function hanoiRecursive(n, first , second, third) {
+    if (n === 1) {
+      console.log(`перемещенте диска с ${first} в ${third}`);
+      return;
+    }
+  
+    hanoiRecursive(n - 1, first, third, second);
+    console.log(`перемещенте диска с ${first} в ${third}`);
+    hanoiRecursive(n - 1, second, first, third);
+  }
+  
+  const n = 3; // Количество дисков
+  const first = 'First'; // 1 cтержень
+  const second = 'Second'; // 2 cтержень
+  const third = 'Third'; // 3 cтержень
+  
+  hanoiRecursive(n, first, second, third);
