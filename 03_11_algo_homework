@@ -1,0 +1,23 @@
+function englishFrequency(text) {
+    const englishAlphabet = "abcdefghijklmnopqrstuvwxyz"; // all english alphabet
+    const frequencyMap = {};
+
+    for (let letter of englishAlphabet) {
+        frequencyMap[letter] = 0; // let start index will be 0
+    }
+
+    text = text.toLowerCase(); // put all to lower to exclude all upper letters
+
+    for (let char of text) {
+        if (englishAlphabet.includes(char)) {
+            frequencyMap[char]++;  // add to frequency quantity of letters from our example 
+        }
+    }
+
+    return frequencyMap;
+}
+
+const text = "Lets count our letters"; // example text
+const frequencyMap = englishFrequency(text);
+
+console.log(frequencyMap);
