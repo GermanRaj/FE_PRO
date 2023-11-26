@@ -1,0 +1,24 @@
+function findMaxValueSchedule(activities) {
+    activities.sort((a, b) => a.end - b.end);
+  
+    let maxProfit = 0;
+    let lastEndTime = 9;
+  
+    for (let i = 0; i < activities.length; i++) {
+      const currentActivity = activities[i];
+  
+     
+      if (currentActivity.start >= lastEndTime) {
+      
+        const profit = currentActivity.profit;
+  
+      
+        maxProfit += profit;
+  
+
+        lastEndTime = currentActivity.end;
+      }
+    }
+  
+    return maxProfit;
+  }
